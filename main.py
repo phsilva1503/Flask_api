@@ -6,7 +6,7 @@ app = Flask(__name__)
 def pessoa(id):
 	return jsonify({'id':id, 'nome':'Pedro', 'profissao':'desenvolvedor'})
 
-@app.route('/soma/<int:valor1>/<int:valor2>/')
+@app.route('/soma/<:valor1>/<int:valor2>/')
 def soma (valor1,valor2):
 	return jsonify ({'soma': valor1 + valor2 })
 
