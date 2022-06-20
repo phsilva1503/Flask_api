@@ -1,9 +1,12 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return 'Hello from Flask!'
+@app.route('/<id>')
+def pessoa(id):
+	return jsonify({'id':id, 'nome':'Pedro', 'profissao':'desenvolvedor'})
 
-app.run(host='0.0.0.0', port=81)
+
+
+if __name__=='__main__':
+	app.run(host='0.0.0.0', port=81, debug = True)
